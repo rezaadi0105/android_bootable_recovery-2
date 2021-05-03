@@ -482,12 +482,12 @@ void TWPartitionManager::Decrypt_Data() {
 						property_get("fbe.data.wrappedkey", wrappedvalue, "");
 						std::string wrappedkeyvalue(wrappedvalue);
 						if (wrappedkeyvalue == "true") {
-							LOGERR("Unable to decrypt FBE device\n");
+							LOGINFO("Unable to decrypt FBE device\n");
 						} else {
 							LOGINFO("Trying wrapped key.\n");
 							property_set("fbe.data.wrappedkey", "true");
 							if (!Decrypt_Data->Decrypt_FBE_DE()) {
-								LOGERR("Unable to decrypt FBE device\n");
+								LOGINFO("Unable to decrypt FBE device\n");
 							}
 						}
 					}
